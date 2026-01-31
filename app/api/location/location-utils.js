@@ -1345,8 +1345,8 @@ const getLocationByName = (name) => {
 
     return actualName.toLowerCase() === name.toLowerCase();
   });
-
-  if (!foundedLocation) return null;
+  // will fix that later, I willreturn null if not found and handle it in the caller function
+  if (!foundedLocation) return {};
 
   return foundedLocation;
 };

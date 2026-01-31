@@ -7,12 +7,12 @@ export async function GET(_request, { params }) {
   try {
     const singleLocation = getLocationByName(name);
 
-    if (!singleLocation) {
-      return NextResponse.json(
-        { message: "Location not found" },
-        { status: 404 },
-      );
-    }
+    // if (!singleLocation) {
+    //   return NextResponse.json(
+    //     { message: "Location not found" },
+    //     { status: 404 },
+    //   );
+    // }
     return NextResponse.json(singleLocation);
   } catch (error) {
     return NextResponse.json(
