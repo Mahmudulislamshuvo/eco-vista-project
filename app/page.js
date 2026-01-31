@@ -1,5 +1,11 @@
+import LocationDetector from "@/components/LocationDetector";
+
 const Home = () => {
-  return <div>Home page</div>;
+  return (
+    <div>
+      <LocationDetector />
+    </div>
+  );
 };
 
 export default Home;
