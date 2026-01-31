@@ -1,5 +1,5 @@
 import { getLocationData } from "@/lib/location-info";
-import Image from "next/image";
+import Switcher from "./Switcher";
 
 const LocationInfo = async ({ lat, lon }) => {
   const locationData = await getLocationData(lat, lon);
@@ -12,26 +12,7 @@ const LocationInfo = async ({ lat, lon }) => {
             {locationData?.continent}
           </h2>
           <div className="relative">
-            <button>
-              <Image
-                className="size-9"
-                src="/link.svg"
-                alt="link icon"
-                width={36}
-                height={36}
-              />
-            </button>
-            <div className="absolute left-0 top-12 z-[999] w-full min-w-[280px] rounded-md bg-white p-4 shadow max-md:-translate-x-1/2">
-              <ul
-                role="list"
-                className="divide-y divide-gray-100 [&>*]:py-2 [&>li]:cursor-pointer"
-              >
-                <li>Kolkata</li>
-                <li>Dhaka</li>
-                <li>London</li>
-                <li>Amsterdam</li>
-              </ul>
-            </div>
+            <Switcher />
           </div>
         </div>
         <p className="text-lg text-[#C4C4C4] lg:text-xl">
