@@ -21,6 +21,7 @@ const LocationDetector = () => {
 
     isDetectingRef.current = true;
     setLoading(true);
+    console.log("Rendaring...");
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
