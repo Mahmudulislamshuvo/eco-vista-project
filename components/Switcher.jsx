@@ -3,12 +3,26 @@
 import { getLocationList } from "@/lib/location-info";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Switcher = () => {
   const [showLocationList, setShowLocationList] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const locations = use(getLocationList());
+  const [locations, setLocations] = useState([]);
+
+  // Fetch data using useEffect on component mount
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const data = await getLocationList();
+        setLocations(data);
+      } catch (error) {
+        console.error("Failed to fetch locations:", error);
+      }
+    };
+
+    fetchLocations();
+  }, []);
 
   const filteredLocations = locations
     .filter((loc) =>

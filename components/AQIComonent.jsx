@@ -41,7 +41,7 @@ const AQIComonent = async ({ lat, lon }) => {
             Air Quality Index
           </div>
           <span className="text-right text-sm text-white lg:text-base">
-            {getAQIRating(main.aqi)}
+            {getAQIRating(main?.aqi)}
           </span>
         </div>
         {/* <!-- item ends --> */}
