@@ -15,6 +15,9 @@
   .bg-img {
     @apply h-screen absolute left-0 right-0 top-0 z-10 w-full object-cover max-lg:fixed max-lg:h-screen;
   }
+  /* .bg-img {
+    @apply fixed top-0 left-0 w-full h-full object-cover -z-10;
+  } */
   .overlay {
     @apply h-screen absolute left-0 right-0 top-0 z-20 w-full bg-[url('/gradient.png')] bg-cover bg-center bg-no-repeat max-lg:fixed max-lg:h-screen;
   }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +9,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <div className="wrapper">
+          <Image
+            src="/background.png"
+            alt="background"
+            fill
+            priority
+            className="bg-img"
+          />
+          <div className="overlay"></div>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
