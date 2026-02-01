@@ -9,8 +9,6 @@ const AqiPage = async ({
 }) => {
   const resolve = await getResolvedLatLong(location, latitude, longitude);
 
-  console.log("aqi", resolve?.lon);
-
   if (resolve?.lat && resolve?.lon) {
     return <AQIComonent lat={resolve.lat} lon={resolve.lon} />;
   } else {
