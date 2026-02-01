@@ -28,7 +28,7 @@ const NoLocationFound = ({ location }) => {
         </h2>
         <p className="text-[#CADEE8] mb-8">
           Sorry, we couldn't resolve the coordinates for{" "}
-          <span className="font-semibold text-white">"{location}"</span>. It
+          <span className="font-semibold text-white">`{location}`</span>. It
           might be an invalid name or our data is unavailable.
         </p>
 
