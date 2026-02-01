@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Eco-Vista: Real-time Environmental Insights
 
-## Getting Started
+![Eco-Vista Banner](public/image.png)
 
-First, run the development server:
+Eco-Vista is a modern web application built with Next.js that provides real-time environmental data including Air Quality Index (AQI), temperature, weather conditions, and wind information for specific locations. Designed with a focus on intuitive user experience and clean aesthetics, Eco-Vista helps users stay informed about their local environment at a glance.
+
+## ✨ Features
+
+- **Location-Based Data:** Retrieve detailed environmental information for any specified location.
+- **Comprehensive Metrics:** View Air Quality Index, current temperature, detailed weather forecasts, and wind speed/direction.
+- **Parallel Routing:** Efficiently display multiple data streams simultaneously using Next.js parallel routes.
+- **Responsive Design:** Optimized for seamless viewing across various devices and screen sizes.
+- **Intuitive UI:** Clean and modern interface powered by Tailwind CSS.
+- **Graceful Error Handling:** Provides clear feedback when location data is unavailable or cannot be resolved.
+
+## 🚀 Technologies Used
+
+- **Next.js 14+:** React framework for production.
+- **React:** Frontend library for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **JavaScript:** Core programming language.
+- **Environment Variables:** Secure handling of API keys and sensitive information.
+
+## 📦 Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or Yarn
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    https://github.com/Mahmudulislamshuvo/eco-vista-project
+    cd eco-vista
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Set up Environment Variables:**
+    Create a `.env` file in the root of the project based on `.env.example` (if one exists). You will need API keys for the weather and geocoding services used by the application.
+    ```
+    # Example .env content
+    B_DATA_API_KEY=your_geo_api_key_here
+    OPENWEATHER_API_KEY=your_openweather_api_key_here
+    ```
+
+### Running Locally
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🌐 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[Link to Live Demo (e.g., Vercel, Netlify)](https://your-live-demo-url-here.com)
 
-## Learn More
+## 🎥 Video Walkthrough
 
-To learn more about Next.js, take a look at the following resources:
+Here's a brief video showcasing the application's features and functionality:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://github.com/user-attachments/assets/4e744687-7c34-48d4-9d97-5288ab94ca56
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 💡 Usage
 
-## Deploy on Vercel
+Navigate to a specific location by typing its name in the search bar or by using the URL pattern: `http://localhost:3000/your-city-name`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Example: `http://localhost:3000/london` or `http://localhost:3000/paris`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
