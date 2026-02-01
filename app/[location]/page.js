@@ -9,13 +9,7 @@ const LocationPage = async ({
 }) => {
   //
 
-  const resolve = await getResolvedLatLong(location, latitude, longitude);
-
-  if (resolve?.lat && resolve?.lon) {
-    return <LocationInfo lat={resolve.lat} lon={resolve.lon} />;
-  } else {
-    return <NoLocationFound location={location} />;
-  }
+  return <LocationInfo lat={latitude} lon={longitude} />;
 };
 
 export default LocationPage;
