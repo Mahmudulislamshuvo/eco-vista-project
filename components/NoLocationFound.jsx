@@ -1,6 +1,34 @@
 import Link from "next/link";
 
-const NoLocationFound = ({ location }) => {
+const NoLocationFound = ({ location, small = false }) => {
+  if (small) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full p-4 text-center">
+        <div className="bg-white/5 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 text-red-400"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+            />
+          </svg>
+        </div>
+        <h3 className="text-lg font-bold text-white mb-1">Location Error</h3>
+        <p className="text-sm text-[#CADEE8]">
+          Could not find <span className="font-semibold text-white">`{location}`</span>.
+        </p>
+      </div>
+    );
+  }
+
+  // Original large version
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] col-span-12">
       <div className="max-w-md w-full bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center shadow-lg">

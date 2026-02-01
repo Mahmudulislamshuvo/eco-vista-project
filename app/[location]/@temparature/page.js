@@ -1,6 +1,7 @@
 import NoLocationFound from "@/components/NoLocationFound";
 import TemperatureComponent from "@/components/TemperatureComponent";
 import { getResolvedLatLong } from "@/lib/location-info";
+import Card from "@/components/Card";
 
 const TempperaturePage = async ({
   params: { location },
@@ -11,7 +12,7 @@ const TempperaturePage = async ({
   if (resolve?.lat && resolve?.lon) {
     return <TemperatureComponent lat={resolve.lat} lon={resolve.lon} />;
   } else {
-    return <NoLocationFound location={location} />;
+    return <Card><NoLocationFound location={location} small /></Card>;
   }
 };
 

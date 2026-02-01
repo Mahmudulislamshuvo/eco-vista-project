@@ -1,6 +1,7 @@
 import AQIComonent from "@/components/AQIComonent";
 import NoLocationFound from "@/components/NoLocationFound";
 import { getResolvedLatLong } from "@/lib/location-info";
+import Card from "@/components/Card";
 
 const AqiPage = async ({
   params: { location },
@@ -8,10 +9,16 @@ const AqiPage = async ({
 }) => {
   const resolve = await getResolvedLatLong(location, latitude, longitude);
 
+  console.log("aqi", resolve?.lon);
+
   if (resolve?.lat && resolve?.lon) {
     return <AQIComonent lat={resolve.lat} lon={resolve.lon} />;
   } else {
-    return <NoLocationFound location={location} />;
+    return (
+      <Card>
+        <NoLocationFound location={location} small />
+      </Card>
+    );
   }
 };
 
