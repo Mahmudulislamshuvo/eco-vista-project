@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
             className="bg-img"
           />
           <div className="overlay"></div>
-          {children}
+          <main className="relative z-30">{children}</main>
         </div>
       </body>
     </html>
