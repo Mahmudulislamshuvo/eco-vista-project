@@ -22,7 +22,11 @@ const NoLocationFound = ({ location, small = false }) => {
         </div>
         <h3 className="text-lg font-bold text-white mb-1">Location Error</h3>
         <p className="text-sm text-[#CADEE8]">
-          Could not find <span className="font-semibold text-white">`{location}`</span>.
+          Could not find{" "}
+          <span className="font-semibold text-white">
+            &quot;{location}&quot;
+          </span>
+          .
         </p>
       </div>
     );
@@ -54,10 +58,14 @@ const NoLocationFound = ({ location, small = false }) => {
         <h2 className="text-2xl font-bold text-white mb-2">
           Location Not Found
         </h2>
+
+        {/* সমস্যা এখানে ছিল: couldn't -> couldn&apos;t */}
         <p className="text-[#CADEE8] mb-8">
-          Sorry, we couldn't resolve the coordinates for{" "}
-          <span className="font-semibold text-white">`{location}`</span>. It
-          might be an invalid name or our data is unavailable.
+          Sorry, we couldn&apos;t resolve the coordinates for{" "}
+          <span className="font-semibold text-white">
+            &quot;{location}&quot;
+          </span>
+          . It might be an invalid name or our data is unavailable.
         </p>
 
         {/* Action Button */}
