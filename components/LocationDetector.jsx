@@ -32,7 +32,7 @@ const LocationDetector = () => {
           params.set("longitude", position.coords.longitude);
 
           isDetectingRef.current = false;
-          router.push(`/current?${params.toString()}`);
+          router.push(`/your-location?${params.toString()}`);
         },
         //  Error Case
         (error) => {
