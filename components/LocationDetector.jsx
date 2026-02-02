@@ -20,7 +20,7 @@ const LocationDetector = () => {
 
     // define a fallback function to get default location
     const fallbackToDefaultLocation = () => {
-      router.push(`/dhaka`);
+      router.push(`/dallas`);
     };
 
     if (navigator.geolocation) {
