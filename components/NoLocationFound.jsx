@@ -59,7 +59,7 @@ const NoLocationFound = ({ location, small = false }) => {
           Location Not Found
         </h2>
 
-        {/* সমস্যা এখানে ছিল: couldn't -> couldn&apos;t */}
+        {/* Fixed Line below: changed couldn't to couldn&apos;t */}
         <p className="text-[#CADEE8] mb-8">
           Sorry, we couldn&apos;t resolve the coordinates for{" "}
           <span className="font-semibold text-white">
