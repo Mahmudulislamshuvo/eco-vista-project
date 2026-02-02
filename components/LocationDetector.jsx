@@ -1,9 +1,8 @@
 "use client";
 
-import { getCoordinatesFromLocation } from "@/lib/location-info";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const LocationDetector = () => {
   const isDetectingRef = useRef(false);
@@ -20,29 +19,8 @@ const LocationDetector = () => {
     isDetectingRef.current = true;
 
     // define a fallback function to get default location
-    const fallbackToDefaultLocation = async () => {
-      try {
-        console.log("Fetching default location (Dhaka)...");
-
-        const defaultData = await getCoordinatesFromLocation("dhaka");
-
-        if (defaultData && defaultData.latitude && defaultData.longitude) {
-          const params = new URLSearchParams(searchParams);
-          params.set("latitude", defaultData.latitude);
-          params.set("longitude", defaultData.longitude);
-
-          router.push(`/current?${params.toString()}`);
-        } else {
-          // If API also fails, manually set (final safety)
-          console.warn("API failed, using manual coordinates.");
-          router.push(`/current?latitude=23.8103&longitude=90.4125`);
-        }
-      } catch (error) {
-        console.error("Fallback error:", error);
-        // If all else fails, stop loading
-      } finally {
-        isDetectingRef.current = false;
-      }
+    const fallbackToDefaultLocation = () => {
+      router.push(`/dhaka`);
     };
 
     if (navigator.geolocation) {
