@@ -51,10 +51,6 @@ const LocationDetector = () => {
         height={500}
         className="mx-auto mb-4"
       />
-
-      <Suspense fallback={<div>Detecting location...</div>}>
-        <LocationDetector />
-      </Suspense>
     </>
   );
 };
