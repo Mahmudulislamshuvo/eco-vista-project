@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, Suspense } from "react";
 
 const LocationDetector = () => {
   const [loading, setLoading] = useState(false);
@@ -51,7 +51,10 @@ const LocationDetector = () => {
         height={500}
         className="mx-auto mb-4"
       />
-      <p>{loading ? "Detecting Location..." : "Location Detected"}</p>
+
+      <Suspense fallback={<div>Detecting location...</div>}>
+        <LocationDetector />
+      </Suspense>
     </>
   );
 };
